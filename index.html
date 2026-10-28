@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коферусс · инвестору: кофейня на Новорязанской, 2/7</title>
+<meta name="description" content="Открываем кофейню у Казанского вокзала. Аренда внесена, стойка готова. Ищем инвестора на открытие: доля выручки каждый месяц.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordo:#8C0B1D; --bordo-dark:#6E0816; --ink:#141010; --cream:#F8F5EC; --cream-2:#EFEAD9;
+  --muted:#6F6861; --line:#D9D2C4; --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Golos Text',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;font-size:18px}
+h1,h2,h3,.num{font-family:'Unbounded',sans-serif;letter-spacing:-0.01em;line-height:1.08}
+h1{font-size:clamp(34px,5.2vw,72px);font-weight:900}
+h2{font-size:clamp(26px,3.2vw,44px);font-weight:700;margin-bottom:28px}
+h3{font-size:20px;font-weight:700;margin-bottom:10px}
+p{max-width:62ch}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.label{font:600 13px/1 'Golos Text',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.btn{display:inline-block;background:var(--bordo);color:#fff;text-decoration:none;font-weight:600;padding:18px 30px;border-radius:6px;font-size:18px}
+.btn:hover{background:var(--bordo-dark)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+/* шапка */
+header{position:sticky;top:0;z-index:10;background:rgba(248,245,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.bear{width:40px;height:38px;background:var(--bordo);-webkit-mask:url(assets/bear_logo.svg) no-repeat center/contain;mask:url(assets/bear_logo.svg) no-repeat center/contain}
+.word{width:150px;height:17px;background:var(--ink);-webkit-mask:url(assets/wordmark_v7.svg) no-repeat center/contain;mask:url(assets/wordmark_v7.svg) no-repeat center/contain}
+nav a{text-decoration:none;font-weight:500;margin-left:26px;font-size:16px}
+nav a:hover{color:var(--bordo)}
+@media(max-width:800px){nav{display:none}}
+
+/* герой */
+.hero{padding:72px 0 80px;background:var(--cream)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+.hero p.lead{font-size:22px;margin:26px 0 34px;max-width:54ch}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero img{width:100%;height:560px;object-fit:cover;object-position:50% 30%;border-radius:8px}
+.hero .cap{font-size:14px;color:var(--muted);margin-top:10px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero img{height:380px}}
+
+/* полоса цифр */
+.strip{background:var(--ink);color:#fff;padding:44px 0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.strip .num{font-size:44px;font-weight:700;color:#fff}
+.strip .num small{font-size:20px;font-weight:500}
+.strip p{font-size:15px;color:#C9C1B6;margin-top:6px;max-width:none}
+@media(max-width:900px){.strip .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* место */
+.place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.place img{width:100%;border-radius:8px;border:1px solid var(--line)}
+.facts{list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
+.facts b{font-weight:600}
+.src{font-size:14px;color:var(--muted);margin-top:18px}
+@media(max-width:900px){.place .wrap{grid-template-columns:1fr}}
+
+/* сосед */
+.proof{background:var(--bordo);color:#fff}
+.proof .wrap{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:center}
+.proof .label{color:#F2C9CF}
+.proof .num{font-size:clamp(90px,14vw,180px);font-weight:900;line-height:.95;margin:8px 0 18px}
+.proof p{color:#FBE9EC}
+.proof img{width:100%;border-radius:6px}
+.proof .cap{font-size:14px;color:#F2C9CF;margin-top:8px}
+@media(max-width:900px){.proof .wrap{grid-template-columns:1fr}}
+
+/* сделано / осталось */
+.status .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:8px}
+.status h3{color:var(--bordo);font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-family:'Golos Text',sans-serif;font-weight:600}
+.status .cols img{width:100%;height:300px;object-fit:cover;object-position:62% 60%;border-radius:8px;margin-top:28px}
+@media(max-width:900px){.status .cols{grid-template-columns:1fr}}
+
+/* сценарии */
+.scen{background:var(--cream-2)}
+table{width:100%;border-collapse:collapse;font-size:17px;margin-top:8px}
+th,td{padding:14px 12px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+tr.total td{font-weight:700;border-bottom:2px solid var(--ink)}
+.scen p.note{margin-top:22px}
+
+/* условия */
+.terms .box{border:2px solid var(--ink);border-radius:8px;padding:36px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.terms .box p{max-width:none}
+.terms .todo{background:#FFF3C4;border-left:0;padding:14px 18px;border-radius:6px;font-size:15px;margin-top:18px}
+@media(max-width:900px){.terms .box{grid-template-columns:1fr}}
+
+/* риски */
+.risks .grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
+.risks .grid div{border-top:2px solid var(--ink);padding-top:16px}
+.risks .grid p{max-width:none;font-size:17px}
+@media(max-width:900px){.risks .grid{grid-template-columns:1fr}}
+
+/* созвон */
+.call{background:var(--ink);color:#fff}
+.call .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.call h2{color:#fff}
+.call p{color:#C9C1B6}
+.call .contacts a{display:block;color:#fff;text-decoration:none;font-size:22px;font-weight:600;margin-bottom:10px}
+.call .contacts a:hover{color:#F2C9CF}
+.call .fine{font-size:13px;color:#8F867C;margin-top:36px;max-width:none}
+@media(max-width:900px){.call .wrap{grid-template-columns:1fr}}
+footer{padding:28px 0;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="bear"></span><span class="word"></span></a>
+    <nav>
+      <a href="#place">Место</a>
+      <a href="#status">Что сделано</a>
+      <a href="#scen">Расчёт</a>
+      <a href="#terms">Условия</a>
+      <a href="#call">Созвон</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="label">Предложение инвестору · октябрь 2026</div>
+      <h1>Кофейня у&nbsp;Казанского вокзала. Аренда внесена, стойка готова.</h1>
+      <p class="lead">Новорязанская, 2/7: кофе с собой для четырёх офисных домов рядом, 20 м² на первом этаже, свой вход с улицы, вокзал в двух минутах. Точку открываем и ведём мы. Вы финансируете открытие и получаете долю выручки каждый месяц.</p>
+      <div class="cta">
+        <a class="btn" href="#call">Созвон на 30 минут</a>
+        <a class="btn ghost" href="#scen">Смотреть расчёт</a>
+      </div>
+    </div>
+    <div>
+      <img src="assets/corner.jpg" alt="Угол дома 2/7 на Новорязанской">
+      <div class="cap">Угол дома на Новорязанской, вид с Рязанского проезда. Наша дверь слева от угла.</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><div class="num">14</div><p>кофеен Коферусс работают в Москве: шесть своих и восемь по франшизе</p></div>
+    <div><div class="num">×7</div><p>выросла выручка шести своих кофеен с 2022 по 2025 год: с 12,1 до 84,9 млн ₽ в год, 2025-й дал +27 % к 2024-му</p></div>
+    <div><div class="num">5<small>-й год</small></div><p>на рынке. Ковид, уход якорных арендаторов из ТЦ, подорожание арабики, общий кризис 2025–26: сеть прошла всё</p></div>
+    <div><div class="num">120<small> тыс.</small></div><p>₽ в месяц аренда на Новорязанской, фиксом, без процента с оборота. Договор подписан, аренда внесена</p></div>
+  </div>
+</div>
+
+<section class="place" id="place">
+  <div class="wrap">
+    <div>
+      <div class="label">Место</div>
+      <h2>Кто здесь пьёт кофе: четыре офисных дома, вокзал и метро</h2>
+      <ul class="facts">
+        <li><b>Галочки</b>: офисы в 100–200 м, наш основной клиент. Коворкинг Workki на 681 место, офис РЖД, ГУЭБиПК МВД, Патефон.ру.</li>
+        <li><b>Бирюзовая линия на карте</b>: пешеходный путь от Казанского вокзала и метро «Комсомольская» к Новой Басманной. Он идёт мимо нашей двери.</li>
+        <li>До вокзала и метро 220–390 м. Ближе 200 м один конкурент, остальные кофейни сидят внутри вокзала и ловят пассажиров с чемоданами.</li>
+        <li>Наш гость идёт от метро на работу и обратно и покупает у той двери, мимо которой проходит.</li>
+      </ul>
+      <p class="src">Карта: Яндекс Карты, разметка основателя сети, 3 августа 2026. Вместимость Workki: карточка на ЦИАН. Поток у входа замерен по часам основателем сети.</p>
+    </div>
+    <div><img src="assets/map_vadim.jpg" alt="Карта: потоки от вокзала и офисы рядом с точкой"></div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div>
+      <div class="label">Спрос уже доказан соседом</div>
+      <div class="num">226</div>
+      <p style="font-size:22px">чеков к шести вечера в понедельник у кофейни «Космо Тирекс» в этом же доме, в 15 метрах от нашей двери. Контрольная покупка 3 августа: номер чека в смене виден на нём самом.</p>
+      <p style="margin-top:18px">Наш план скромнее соседа: 60, 71 и 82 чека в день в трёх сценариях, от четверти до 36 % его буднего дня.</p>
+    </div>
+    <div>
+      <img src="assets/receipt.jpg" alt="Фрагмент чека соседней кофейни">
+      <div class="cap">Чек № 226 смены, адрес расчёта Новорязанская, 2/7, 03.08.2026 18:23</div>
+    </div>
+  </div>
+</section>
+
+<section class="place" id="neighbors">
+  <div class="wrap">
+    <div>
+      <div class="label">Соседи по дому</div>
+      <h2>Дом уже кормит поток: шаурма и Озон работают, Милти заходит</h2>
+      <p style="font-size:18px;margin-bottom:14px">Мы не первые, кто открывается в этом доме. Соседи уже приучили людей заходить сюда, и у каждого свой поток: обед, заказы, офисный перекус. Кофе берут по дороге ко всем трём.</p>
+      <p style="font-size:18px">Милти встаёт на часть площади за шаурмой. Для нас это два плюса: якорь для сотрудников соседних офисов и повод для арендодателя снизить нам аренду. Он сам это предложил, допсоглашение в работе.</p>
+      <p class="src">Источник: переписка с арендодателем 15–27 октября 2026 (часы работы соседей, предложение по Милти и снижению аренды). Оценка потока шаурмы: основатель сети, 28.10.2026.</p>
+    </div>
+    <div>
+      <ul class="facts">
+        <li><b>Шаурма</b> · ежедневно до 21:00 · работает. Собирает заметный поток в обед и вечером: готовый трафик у нашей двери.</li>
+        <li><b>Озон</b> · пункт выдачи, до 22:00 · работает. За заказами приходят каждый день, не только в обеденный час.</li>
+        <li><b>Милти</b> · готовая еда для офисов · заходит. Якорь для офисников соседних домов. С входом Милти аренда для нас снижается.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="status" id="status">
+  <div class="wrap">
+    <div class="label">Что сделано</div>
+    <h2>Самое тяжёлое позади: аренда внесена, стойка готова</h2>
+    <div class="cols">
+      <div>
+        <h3>Сделано</h3>
+        <ul class="facts">
+          <li>Договор субаренды <b>подписан по ЭДО</b></li>
+          <li>Обеспечительный платёж и первый месяц аренды <b>внесены</b></li>
+          <li>Вывеска согласована, арендодатель подводит 15 кВт, воду и канализацию</li>
+          <li><b>Остров-стойка готов</b>, монтаж в ближайшие дни. Это модуль, не ремонт: при переезде едет с нами</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Осталось</h3>
+        <ul class="facts">
+          <li>Витрина, холод и мелкое оборудование</li>
+          <li>Касса, терминал и видеонаблюдение</li>
+          <li>Первая закупка товара и реклама открытия</li>
+          <li>Резерв на разгон первых месяцев и паушальный взнос</li>
+          <li>Осталось около <b>1,6 млн ₽</b> из 2,5 млн: оборудование и запуск 650 тыс., резерв на разгон 620 тыс., паушальный взнос 300 тыс. (вношу я)</li>
+        </ul>
+        <img src="assets/facade.jpg" alt="Фасад: наша дверь и витрина, место вывески">
+      </div>
+    </div>
+    <p class="src">Договор субаренды № 1-НВ/2026 и приложение № 2 к нему. Смета: финмодель точки, лист «Инвестиции».</p>
+  </div>
+</section>
+
+<section class="scen" id="scen">
+  <div class="wrap">
+    <div class="label">Расчёт</div>
+    <h2>Три сценария выручки на Новорязанской</h2>
+    <table>
+      <thead><tr><th>Месяц на плане</th><th>Осторожный</th><th>Базовый</th><th>Хороший</th></tr></thead>
+      <tbody>
+        <tr><td>Чеков в будни / выходные</td><td>70 / 35</td><td>85 / 35</td><td>95 / 50</td></tr>
+        <tr><td>Чеков в день, в среднем</td><td>60</td><td>71</td><td>82</td></tr>
+        <tr><td>Выручка в месяц, ₽</td><td>638 400</td><td>755 440</td><td>872 480</td></tr>
+        <tr><td>Аренда к выручке</td><td>19 %</td><td>16 %</td><td>14 %</td></tr>
+        <tr><td>Прибыль точки в месяц, ₽</td><td>39 515</td><td>106 443</td><td>138 613</td></tr>
+        <tr class="total"><td>Вам: 6 % выручки, ₽</td><td>38 304</td><td>45 326</td><td>52 349</td></tr>
+        <tr><td>Остаётся мне, ₽</td><td>1 211</td><td>61 117</td><td>86 264</td></tr>
+      </tbody>
+    </table>
+    <p class="note">В худшем сценарии я отдаю вам всю прибыль точки: 38 тыс. из 39,5 тыс., себе оставляю около тысячи в месяц. Плохой год наказывает меня, не вас. Выплата считается от выручки, а не от прибыли. В первый месяц точка делает около 60 % плана и выходит на него к девятому.</p>
+    <p class="src">Чек 350 ₽. Доли продуктов, списаний и эквайринга, ставка бариста и постоянные расходы по факту наших точек. Налог: патент, в хорошем сценарии УСН 6 %. Режим налога уточняем с бухгалтером.</p>
+  </div>
+</section>
+
+<section class="terms" id="terms">
+  <div class="wrap">
+    <div class="label">Условия</div>
+    <h2>Вы финансируете открытие, точка платит долю выручки</h2>
+    <div class="box">
+      <div>
+        <h3>Как это устроено</h3>
+        <p>Деньги идут на открытие этой точки, а не в сеть. Каждый месяц вы получаете долю выручки по кассе точки, цифры подтверждаются данными оператора фискальных данных. Отчёт раз в месяц, доступ к кассе, визиты на точку без предупреждения.</p>
+      </div>
+      <div>
+        <h3>Что в договоре</h3>
+        <p>Закрыть или продать точку без вашего согласия нельзя. Крупные решения с вашего письменного согласия. Если место не пойдёт, стойка и оборудование переезжают, договор и выплаты переходят на новый адрес.</p>
+        <h3 style="margin-top:28px">Цифры</h3>
+        <ul class="facts">
+          <li><b>До 1 млн ₽</b> на открытие точки. Раунд 2 млн, <b>половина уже выкуплена</b>, свободно 1 млн</li>
+          <li><b>6 % выручки</b> точки каждый месяц, пять лет с месяца открытия. От выручки, не от прибыли, без минимального платежа. В худшем сценарии я отдаю вам всю прибыль точки</li>
+          <li>На втором году это <b>40–55 тыс. ₽ в месяц</b> по трём сценариям. Вложенное возвращается из выплат на <b>21–28-м месяце</b>, дальше ещё три года каждая выплата чистый доход</li>
+          <li><b>30–48 % в год</b> на вложенное, до налогов, за пять лет выплат: 30, 39 и 48 %. В базовом сценарии за пять лет 2,9 млн на вложенный миллион</li>
+          <li>Рост цен в меню поднимает выплату: при 10 % в год вместо 5 % базовый сценарий даёт 45 % в год и 3,3 млн за пять лет</li>
+          <li>Инвесторов у точки несколько, условия у всех одни, кассу видит каждый. По договору отвечаю как ИП всем своим имуществом (ст. 24 ГК РФ)</li>
+        </ul>
+        <p class="src">Расчёт финмоделью сети для Новорязанской, три сценария потока, рост цен 5 % в год. Доходность: доход сверх вложенного за пять лет выплат, делённый на пять. Сумма и доля обсуждаются на созвоне.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="risks" id="risks">
+  <div class="wrap">
+    <div class="label">Если что-то пойдёт не так</div>
+    <h2>Четыре риска и что их закрывает</h2>
+    <div class="grid">
+      <div><h3>Точка выйдет слабее</h3><p>Выплата идёт от выручки, не от прибыли. В худшем сценарии я отдаю вам всю прибыль точки: вам 38 тыс. в месяц, мне около тысячи. Ваши 6 % выручки — около 30 % в год на вложенное.</p></div>
+      <div><h3>Место не пойдёт</h3><p>Переезжаем: стойка модуль, оборудование перевозится. Переезд только с вашего согласия, договор и выплаты переходят на новый адрес.</p></div>
+      <div><h3>Задержат выплаты</h3><p>Неустойка 0,1 % в день. Просрочка больше 60 дней или три просрочки за год дают право потребовать возврат вклада. По договору отвечаю как ИП всем своим имуществом.</p></div>
+      <div><h3>Напротив откроется сеть</h3><p>Уже было: на Ангаре федеральная сеть открылась напротив в июне 2025. Через год наша точка выросла до 1,2–1,3 млн в месяц.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="call" id="call">
+  <div class="wrap">
+    <div>
+      <div class="label">Дальше</div>
+      <h2>Созвон на 30 минут</h2>
+      <p style="font-size:20px">Ответим на вопросы по точке, покажем смету, план выручки по месяцам и проект договора. После созвона пришлём расчёт сделки, финмодель точки, выручку всех наших точек с 2022 года и проект договора.</p>
+      <p class="fine">Не публичная оферта. Показатели расчётные, под конкретное место и три сценария, не гарантируются. Предложение от ИП Оконовенко И. Г.</p>
+    </div>
+    <div class="contacts">
+      <a href="tel:+79932821947">+7 993 282-19-47</a>
+      <a href="https://t.me/ivan_coffeeruss">t.me/ivan_coffeeruss</a>
+      <a href="mailto:okonovenko@coffeeruss.ru">okonovenko@coffeeruss.ru</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Коферусс · сеть кофеен · Москва, с 2021 года</div></footer>
+</body>
+</html>
